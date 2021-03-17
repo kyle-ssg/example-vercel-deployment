@@ -1,5 +1,7 @@
 import fetch from "isomorphic-unfetch"; // we do this here instead of _data.js as it intereferes with react-native
 global.fetch = fetch;
+import "common/project";
+import "./api";
 
 if (typeof projectOverrides !== "undefined") {
   global.Project = {
@@ -9,8 +11,6 @@ if (typeof projectOverrides !== "undefined") {
 }
 
 
-import "../common/utils";
-import "./api";
 import "./libs";
 
 import Link from "next/link";

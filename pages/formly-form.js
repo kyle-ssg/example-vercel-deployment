@@ -4,7 +4,7 @@ import { withFormik } from "formik";
 import { formikPropTypes } from "common/utils/formik";
 import * as yup from "yup";
 import withGrecaptcher from "../components/extras/withGracecaptcher";
-
+import 'common/utils'
 //How does this work ?
 // set formly and grecaptcher in project.js
 // Create a formly project: https://formlyapp.com/

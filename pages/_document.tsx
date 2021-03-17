@@ -46,7 +46,7 @@ class MyDocument extends Document<{ locale:string }> {
                 content="http://ia.media-imdb.com/images/rock.jpg"
               />
               {/*See https://www.google.com/recaptcha/admin*/}
-              {/*<script src="https://www.google.com/recaptcha/api.js" />*/}
+              <script src="https://www.google.com/recaptcha/api.js" />
               <title>The Project</title>
             </Head>
             <body>

@@ -3,16 +3,12 @@ import Router from "next/router";
 import cookie from "cookie";
 import cookies from "js-cookie";
 import Constants from "common/utils/constants";
-import errorHandler from "common/utils/errorHandler";
 import Project from "common/project";
 import storage from "./async-storage-api";
 import { IncomingMessage } from 'http';
 const API = {
   isMobile: () => false,
   storage,
-  ajaxHandler(type, e) {
-    return { type, error: errorHandler(e) };
-  },
   logout() {
     cookies.remove("token");
     Router.replace(Project.logoutRedirect || "/");

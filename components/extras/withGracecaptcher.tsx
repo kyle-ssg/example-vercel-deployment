@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default (WrappedComponent) => {
+const withGracecaptcher = (WrappedComponent) => {
   class HOC extends Component<{}, { grecaptcher?: any }> {
     static displayName = "withGrecaptcher";
     constructor(props) {
@@ -59,3 +59,5 @@ export default (WrappedComponent) => {
 
   return HOC;
 };
+
+export default withGracecaptcher;
