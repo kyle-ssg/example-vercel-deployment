@@ -9,24 +9,6 @@ import {withRouter} from 'next/router';
 
 class MyApp extends App<{}> {
 
-    static getInitialProps = async ({Component, ctx}) => {
-        let pageProps;
-
-        // todo: this shouldn't happen for static resources
-        if (ctx.pathname === "/_error" || !ctx.pathname) {
-            return {};
-        }
-
-        // Only use this function if you are using SSR, then this will retrieve the users token and perform
-
-        if (Component?.getInitialProps) {
-            // Wait for pages to complete any async getInitialProps
-            pageProps = await Component.getInitialProps({ctx});
-        }
-
-        return {pageProps};
-    }
-
     render() {
         const {Component, pageProps} = this.props;
         return (
