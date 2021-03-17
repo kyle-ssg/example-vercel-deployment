@@ -64,7 +64,7 @@ const API = {
                 console.error('GA: Passed null event data');
         return;
       }
-      if ((!data || !data.category || !data.event) && __DEV__) {
+      if ((!data || !data.category || !data.event)) {
         // eslint-disable-next-line
                 console.error('Invalid event provided', data);
       }
