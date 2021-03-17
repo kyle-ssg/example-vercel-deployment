@@ -7,8 +7,7 @@ const HomePage = () => {
 
   return (
     <div className="container">
-      <Button>Click me!</Button>
-      <p>Good morning</p>
+
     </div>
   )
 };
