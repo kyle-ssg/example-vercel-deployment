@@ -3,6 +3,7 @@ import { withRouter } from "next/router";
 import { withFormik } from "formik";
 import { formikPropTypes } from "common/utils/formik";
 import * as yup from "yup";
+import _ from 'common/lodash';
 
 const schema = yup.object().shape({
   name: yup.string().required("You really need to enter a name"),

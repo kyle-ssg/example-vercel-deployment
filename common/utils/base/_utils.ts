@@ -1,7 +1,6 @@
 import omit from "lodash/omit";
 import filter from "lodash/filter";
 import { SyntheticEvent } from "react";
-import moment from 'moment';
 const KEY_Y = 89;
 const KEY_Z = 90;
 const Utils = {
@@ -10,29 +9,6 @@ const Utils = {
   // eslint-disable-next-line
     urlRegex: /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]+(:[0-9]{1,5})?(\/.*)?$/,
 
-  todayUtc(local = moment()) {
-    return Utils.convertToUtc();
-  },
-
-  convertToUtc(local = moment()) {
-    const date = moment.utc().startOf("day").set({
-      days: local.day(),
-      months: local.month(),
-      years: local.year(),
-    })
-    return date;
-  },
-
-  convertToUtcWithHours(local = moment()) {
-    const date = moment.utc().startOf("day").set({
-      days: local.day(),
-      months: local.month(),
-      years: local.year(),
-      hours: local.hour(),
-      minutes: local.minute(),
-    })
-    return date;
-  },
 
   mapEnum(enumerable: any, fn: (data:any)=>void): any[] {
     const enumMembers: any[] = Object.keys(enumerable).map(key => enumerable[key]);

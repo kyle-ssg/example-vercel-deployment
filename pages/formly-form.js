@@ -116,10 +116,10 @@ class FormPage extends Component {
               })
             }
                   onBlur={handleBlur}
-                  value={_.get(values, "alias.value") || ""}
+                  value={values.alias?.value}
                   name="alias"
                 />
-                {_.get(errors, "alias.value") && _.get(touched, "alias.value") && (
+                {errors?.alias?.value && touched?.alias?.value && (
                 <div id="feedback">{errors.alias.value}</div>
           )}
             </Column>
