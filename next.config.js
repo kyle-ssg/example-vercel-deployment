@@ -9,7 +9,6 @@ const withSourceMaps = require("@zeit/next-source-maps");
 
 const nextConfig = {
   // next-offline options
-  target:"serverless",
   typescript: {
     ignoreDevErrors: true,
     ignoreBuildErrors: true,
@@ -64,8 +63,10 @@ const nextConfig = {
 
     return config;
   },
+  target: 'serverless'
 };
 
-module.exports = withFonts(
-    withSourceMaps(withImages(withOffline(withBundleAnalyzer(nextConfig))))
-);
+module.exports = {
+ ...nextConfig,
+  target: 'serverless'
+}
