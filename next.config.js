@@ -48,10 +48,23 @@ const nextConfig = {
     ],
   },
   // buildId, dev, isServer, defaultLoaders, webpack
-  target: 'serverless'
+  webpack: (config, { dev }) => {
+    const base = dev
+      ? require("./.webpack/webpack.config.dev")
+      : require("./.webpack/webpack.config.prod");
+    if (base.plugins) {
+      config.plugins = config.plugins.concat(base.plugins);
+    }
+
+    config.module.rules.push({
+      test: /\.md$/,
+      use: "raw-loader",
+    });
+
+    return config;
+  },
 };
 
-module.exports = {
- ...nextConfig,
-  target: 'serverless'
-}
+module.exports = withFonts(
+  withSourceMaps(withImages(withOffline(withBundleAnalyzer(nextConfig))))
+);

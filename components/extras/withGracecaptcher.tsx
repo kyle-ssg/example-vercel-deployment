@@ -60,4 +60,4 @@ const withGracecaptcher = (WrappedComponent) => {
   return HOC;
 };
 
-export default withGracecaptcher;
+export default withGracecaptcher

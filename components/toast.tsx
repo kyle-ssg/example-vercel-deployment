@@ -46,7 +46,9 @@ const Toast: React.FC = () => {
     // @ts-ignore
     global.toast = (content: string, expiry: number) => {
       const id = Utils.GUID();
+      if (!E2E) {
         setMessages((messages) => [{ content, expiry, id }, ...messages]);
+      }
     };
   },[])
 
