@@ -9,6 +9,7 @@ const withSourceMaps = require("@zeit/next-source-maps");
 
 const nextConfig = {
   // next-offline options
+  target:"serverless",
   typescript: {
     ignoreDevErrors: true,
     ignoreBuildErrors: true,
@@ -50,8 +51,8 @@ const nextConfig = {
   // buildId, dev, isServer, defaultLoaders, webpack
   webpack: (config, { dev }) => {
     const base = dev
-      ? require("./.webpack/webpack.config.dev")
-      : require("./.webpack/webpack.config.prod");
+        ? require("./.webpack/webpack.config.dev")
+        : require("./.webpack/webpack.config.prod");
     if (base.plugins) {
       config.plugins = config.plugins.concat(base.plugins);
     }
@@ -66,5 +67,5 @@ const nextConfig = {
 };
 
 module.exports = withFonts(
-  withSourceMaps(withImages(withOffline(withBundleAnalyzer(nextConfig))))
+    withSourceMaps(withImages(withOffline(withBundleAnalyzer(nextConfig))))
 );
